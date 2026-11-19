@@ -1,0 +1,71 @@
+id: N1
+kind: person
+kind-source: the person (every dense family starts here)
+link works_at -> N4 (3)
+link also_at -> N5 (3)
+link made -> N6 (3)
+link made -> N7 (3)
+link made -> N8 (2)
+link asserts -> N9 (3)
+link asserts -> N10 (3)
+link asserts -> N18 (3)
+link needs -> N11 (2)
+link needs -> N19 (2)
+link reaches_via -> N16 (3)
+id: N2
+kind: unspecified
+kind-source: appears in no edge; kind not determined
+id: N3
+kind: unspecified
+kind-source: contradicts source; spec does not name its kind
+link contradicts -> N9 (3)
+id: N4
+kind: org
+kind-source: works_at / also_at target
+id: N5
+kind: org
+kind-source: also_at target
+id: N6
+kind: work
+kind-source: made target; supports / weakens source
+link supports -> N18 (3)
+link supports -> N9 (2)
+link weakens -> N12 (1)
+id: N7
+kind: work
+kind-source: made target; supports / weakens source
+link supports -> N9 (2)
+link weakens -> N12 (1)
+id: N8
+kind: work
+kind-source: made target; evidences source
+link evidences -> N10 (2)
+id: N9
+kind: claim
+kind-source: asserts / supports target
+id: N10
+kind: claim
+kind-source: asserts target
+id: N14
+kind: metric
+kind-source: measures source
+link measures -> N4 (3)
+id: N15
+kind: metric
+kind-source: measures source
+link measures -> N6 (3)
+id: N16
+kind: channel
+kind-source: reaches_via target
+id: N17
+kind: unspecified
+kind-source: evidences source; spec does not name its kind
+link evidences -> N10 (2)
+id: N18
+kind: claim
+kind-source: asserts / supports target; enables source
+link enables -> N10 (2)
+id: N20
+kind: unspecified
+kind-source: would_fill source; spec does not name its kind
+link would_fill -> N11 (2)

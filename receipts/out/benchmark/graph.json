@@ -1,0 +1,236 @@
+{
+ "nodes": {
+  "N11": {
+   "kind": "ask",
+   "attrs": {}
+  },
+  "N12": {
+   "kind": "blocker",
+   "attrs": {}
+  },
+  "N13": {
+   "kind": "blocker",
+   "attrs": {}
+  },
+  "N19": {
+   "kind": "ask",
+   "attrs": {}
+  },
+  "N1": {
+   "kind": "person",
+   "attrs": {}
+  },
+  "N2": {
+   "kind": null,
+   "attrs": {}
+  },
+  "N3": {
+   "kind": null,
+   "attrs": {}
+  },
+  "N4": {
+   "kind": "org",
+   "attrs": {}
+  },
+  "N5": {
+   "kind": "org",
+   "attrs": {}
+  },
+  "N6": {
+   "kind": "work",
+   "attrs": {}
+  },
+  "N7": {
+   "kind": "work",
+   "attrs": {}
+  },
+  "N8": {
+   "kind": "work",
+   "attrs": {}
+  },
+  "N9": {
+   "kind": "claim",
+   "attrs": {}
+  },
+  "N10": {
+   "kind": "claim",
+   "attrs": {}
+  },
+  "N14": {
+   "kind": "metric",
+   "attrs": {}
+  },
+  "N15": {
+   "kind": "metric",
+   "attrs": {}
+  },
+  "N16": {
+   "kind": "channel",
+   "attrs": {}
+  },
+  "N17": {
+   "kind": null,
+   "attrs": {}
+  },
+  "N18": {
+   "kind": "claim",
+   "attrs": {}
+  },
+  "N20": {
+   "kind": null,
+   "attrs": {}
+  }
+ },
+ "edges": [
+  [
+   "N11",
+   "blocked_by",
+   "N12",
+   3
+  ],
+  [
+   "N19",
+   "blocked_by",
+   "N13",
+   3
+  ],
+  [
+   "N1",
+   "works_at",
+   "N4",
+   3
+  ],
+  [
+   "N1",
+   "also_at",
+   "N5",
+   3
+  ],
+  [
+   "N1",
+   "made",
+   "N6",
+   3
+  ],
+  [
+   "N1",
+   "made",
+   "N7",
+   3
+  ],
+  [
+   "N1",
+   "made",
+   "N8",
+   2
+  ],
+  [
+   "N1",
+   "asserts",
+   "N9",
+   3
+  ],
+  [
+   "N1",
+   "asserts",
+   "N10",
+   3
+  ],
+  [
+   "N1",
+   "asserts",
+   "N18",
+   3
+  ],
+  [
+   "N1",
+   "needs",
+   "N11",
+   2
+  ],
+  [
+   "N1",
+   "needs",
+   "N19",
+   2
+  ],
+  [
+   "N1",
+   "reaches_via",
+   "N16",
+   3
+  ],
+  [
+   "N3",
+   "contradicts",
+   "N9",
+   3
+  ],
+  [
+   "N6",
+   "supports",
+   "N18",
+   3
+  ],
+  [
+   "N6",
+   "supports",
+   "N9",
+   2
+  ],
+  [
+   "N6",
+   "weakens",
+   "N12",
+   1
+  ],
+  [
+   "N7",
+   "supports",
+   "N9",
+   2
+  ],
+  [
+   "N7",
+   "weakens",
+   "N12",
+   1
+  ],
+  [
+   "N8",
+   "evidences",
+   "N10",
+   2
+  ],
+  [
+   "N14",
+   "measures",
+   "N4",
+   3
+  ],
+  [
+   "N15",
+   "measures",
+   "N6",
+   3
+  ],
+  [
+   "N17",
+   "evidences",
+   "N10",
+   2
+  ],
+  [
+   "N18",
+   "enables",
+   "N10",
+   2
+  ],
+  [
+   "N20",
+   "would_fill",
+   "N11",
+   2
+  ]
+ ]
+}

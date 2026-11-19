@@ -1,0 +1,65 @@
+{
+ "inventory": [
+  "N11",
+  "N12",
+  "N13",
+  "N19",
+  "N1",
+  "N2",
+  "N3",
+  "N4",
+  "N5",
+  "N6",
+  "N7",
+  "N8",
+  "N9",
+  "N10",
+  "N14",
+  "N15",
+  "N16",
+  "N17",
+  "N18",
+  "N20"
+ ],
+ "nodes": 20,
+ "edges": 25,
+ "weight_histogram": {
+  "1": 2,
+  "2": 9,
+  "3": 14
+ },
+ "dense_counts": {
+  "ask->blocked_by": 2,
+  "person->work": 3,
+  "person->asserts": 3,
+  "work->supports": 3,
+  "work->weakens": 2
+ },
+ "recovery_R": 1.0,
+ "recovery_per_family": {
+  "person->work": 1.0,
+  "person->asserts": 1.0,
+  "ask->blocked_by": 1.0,
+  "work->supports": 1.0,
+  "work->weakens": 1.0
+ },
+ "dense_precision": 1.0,
+ "flips": 0,
+ "substitutions": 0,
+ "missing": 0,
+ "nondense_recall_secondary": 1.0,
+ "invention": {
+  "I": 1.0,
+  "R": 2,
+  "A": 3,
+  "F": 0
+ },
+ "spontaneous_empty_family_edges": 0,
+ "forbidden_category_nodes": 0,
+ "n2_edges": 0,
+ "dropped_attrs": [],
+ "pass_proposed_bars": {
+  "recovery": true,
+  "invention": true
+ }
+}

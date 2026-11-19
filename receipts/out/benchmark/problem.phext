@@ -1,0 +1,14 @@
+id: N11
+kind: ask
+kind-source: needs target; blocked_by source
+link blocked_by -> N12 (3)
+id: N12
+kind: blocker
+kind-source: blocked_by target
+id: N13
+kind: blocker
+kind-source: blocked_by target
+id: N19
+kind: ask
+kind-source: needs target; blocked_by source
+link blocked_by -> N13 (3)

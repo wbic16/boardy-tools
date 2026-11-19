@@ -1,0 +1,306 @@
+boardy.phext — Boardy's reference instance (N1-N20) as phext
+Source: Boardy's spec, received 2026-11-18 (boardy-tools/04-boardys-spec.md).
+Graph content is exactly the spec's: 20 nodes, 25 typed weighted edges.
+Nothing added, nothing dropped. Attribute values are not supplied by the
+spec and stay empty; node kinds are recorded only where the spec fixes them.
+
+Layout (after 03-the-build.md: problem space, solution space, join):
+  1.1.1/1.1.1/1.1.1  this header
+  1.1.1/1.2.1/1.1.N  problem space — asks and their blockers, at Scroll N
+  1.1.1/1.3.1/1.1.N  solution space — all other nodes, at Scroll N
+  1.1.1/1.4.1/1.1.E  join — one scroll per edge, at Scroll E (spec order)
+
+Node coordinates:
+    N1  1.1.1/1.3.1/1.1.1  (solution space)
+    N2  1.1.1/1.3.1/1.1.2  (solution space)
+    N3  1.1.1/1.3.1/1.1.3  (solution space)
+    N4  1.1.1/1.3.1/1.1.4  (solution space)
+    N5  1.1.1/1.3.1/1.1.5  (solution space)
+    N6  1.1.1/1.3.1/1.1.6  (solution space)
+    N7  1.1.1/1.3.1/1.1.7  (solution space)
+    N8  1.1.1/1.3.1/1.1.8  (solution space)
+    N9  1.1.1/1.3.1/1.1.9  (solution space)
+   N10  1.1.1/1.3.1/1.1.10  (solution space)
+   N11  1.1.1/1.2.1/1.1.11  (problem  space)
+   N12  1.1.1/1.2.1/1.1.12  (problem  space)
+   N13  1.1.1/1.2.1/1.1.13  (problem  space)
+   N14  1.1.1/1.3.1/1.1.14  (solution space)
+   N15  1.1.1/1.3.1/1.1.15  (solution space)
+   N16  1.1.1/1.3.1/1.1.16  (solution space)
+   N17  1.1.1/1.3.1/1.1.17  (solution space)
+   N18  1.1.1/1.3.1/1.1.18  (solution space)
+   N19  1.1.1/1.2.1/1.1.19  (problem  space)
+   N20  1.1.1/1.3.1/1.1.20  (solution space)
+
+Edge coordinates (join space):
+  E1   1.1.1/1.4.1/1.1.1  N1 -works_at(3)-> N4
+  E2   1.1.1/1.4.1/1.1.2  N1 -also_at(3)-> N5
+  E3   1.1.1/1.4.1/1.1.3  N1 -made(3)-> N6
+  E4   1.1.1/1.4.1/1.1.4  N1 -made(3)-> N7
+  E5   1.1.1/1.4.1/1.1.5  N1 -made(2)-> N8
+  E6   1.1.1/1.4.1/1.1.6  N1 -asserts(3)-> N9
+  E7   1.1.1/1.4.1/1.1.7  N1 -asserts(3)-> N10
+  E8   1.1.1/1.4.1/1.1.8  N1 -asserts(3)-> N18
+  E9   1.1.1/1.4.1/1.1.9  N1 -needs(2)-> N11
+  E10  1.1.1/1.4.1/1.1.10  N1 -needs(2)-> N19
+  E11  1.1.1/1.4.1/1.1.11  N11 -blocked_by(3)-> N12
+  E12  1.1.1/1.4.1/1.1.12  N19 -blocked_by(3)-> N13
+  E13  1.1.1/1.4.1/1.1.13  N6 -supports(3)-> N18
+  E14  1.1.1/1.4.1/1.1.14  N6 -supports(2)-> N9
+  E15  1.1.1/1.4.1/1.1.15  N7 -supports(2)-> N9
+  E16  1.1.1/1.4.1/1.1.16  N8 -evidences(2)-> N10
+  E17  1.1.1/1.4.1/1.1.17  N18 -enables(2)-> N10
+  E18  1.1.1/1.4.1/1.1.18  N6 -weakens(1)-> N12
+  E19  1.1.1/1.4.1/1.1.19  N7 -weakens(1)-> N12
+  E20  1.1.1/1.4.1/1.1.20  N15 -measures(3)-> N6
+  E21  1.1.1/1.4.1/1.1.21  N14 -measures(3)-> N4
+  E22  1.1.1/1.4.1/1.1.22  N17 -evidences(2)-> N10
+  E23  1.1.1/1.4.1/1.1.23  N1 -reaches_via(3)-> N16
+  E24  1.1.1/1.4.1/1.1.24  N20 -would_fill(2)-> N11
+  E25  1.1.1/1.4.1/1.1.25  N3 -contradicts(3)-> N9
+
+Dense families (spec): person->work, person->asserts, work->supports,
+ask->blocked_by, work->weakens — 13 of the 25 edges.
+Structurally empty on purpose (spec): person->person, person->time,
+person->private_context, work->work, org->claim. No scrolls exist for these.
+node: N11
+kind: ask
+attributes: purpose, granularity, urgency
+attribute values: not supplied by the spec
+node: N12
+kind: blocker
+attributes: kind
+attribute values: not supplied by the spec
+node: N13
+kind: blocker
+attributes: kind
+attribute values: not supplied by the spec
+node: N19
+kind: ask
+attributes: purpose, granularity, urgency
+attribute values: not supplied by the spec
+node: N1
+kind: person
+attributes: role, function, stage, current_focus
+attribute values: not supplied by the spec
+node: N2
+kind: not fixed by the spec (isolated node; appears in no edge)
+node: N3
+kind: not fixed by the spec (source of contradicts)
+node: N4
+kind: org
+attributes: what_it_sells, stage, headcount, traction
+attribute values: not supplied by the spec
+node: N5
+kind: org
+attributes: what_it_sells, stage, headcount, traction
+attribute values: not supplied by the spec
+node: N6
+kind: work
+attributes: form, maturity, who_uses_it
+attribute values: not supplied by the spec
+node: N7
+kind: work
+attributes: form, maturity, who_uses_it
+attribute values: not supplied by the spec
+node: N8
+kind: work
+attributes: form, maturity, who_uses_it
+attribute values: not supplied by the spec
+node: N9
+kind: not fixed by the spec (target of asserts and supports)
+node: N10
+kind: not fixed by the spec (target of asserts, evidences, and enables)
+node: N14
+kind: metric
+attributes: value, as_of, confidence
+attribute values: not supplied by the spec
+node: N15
+kind: metric
+attributes: value, as_of, confidence
+attribute values: not supplied by the spec
+node: N16
+kind: channel
+attributes: medium, latency
+attribute values: not supplied by the spec
+node: N17
+kind: not fixed by the spec (source of evidences)
+node: N18
+kind: not fixed by the spec (target of asserts and supports; source of enables)
+node: N20
+kind: not fixed by the spec (source of would_fill)
+edge: E1
+N1 -works_at(3)-> N4
+source: N1 @ 1.1.1/1.3.1/1.1.1
+target: N4 @ 1.1.1/1.3.1/1.1.4
+type: works_at
+weight: 3
+family: non-dense
+edge: E2
+N1 -also_at(3)-> N5
+source: N1 @ 1.1.1/1.3.1/1.1.1
+target: N5 @ 1.1.1/1.3.1/1.1.5
+type: also_at
+weight: 3
+family: non-dense
+edge: E3
+N1 -made(3)-> N6
+source: N1 @ 1.1.1/1.3.1/1.1.1
+target: N6 @ 1.1.1/1.3.1/1.1.6
+type: made
+weight: 3
+family: dense (person->work)
+edge: E4
+N1 -made(3)-> N7
+source: N1 @ 1.1.1/1.3.1/1.1.1
+target: N7 @ 1.1.1/1.3.1/1.1.7
+type: made
+weight: 3
+family: dense (person->work)
+edge: E5
+N1 -made(2)-> N8
+source: N1 @ 1.1.1/1.3.1/1.1.1
+target: N8 @ 1.1.1/1.3.1/1.1.8
+type: made
+weight: 2
+family: dense (person->work)
+edge: E6
+N1 -asserts(3)-> N9
+source: N1 @ 1.1.1/1.3.1/1.1.1
+target: N9 @ 1.1.1/1.3.1/1.1.9
+type: asserts
+weight: 3
+family: dense (person->asserts)
+edge: E7
+N1 -asserts(3)-> N10
+source: N1 @ 1.1.1/1.3.1/1.1.1
+target: N10 @ 1.1.1/1.3.1/1.1.10
+type: asserts
+weight: 3
+family: dense (person->asserts)
+edge: E8
+N1 -asserts(3)-> N18
+source: N1 @ 1.1.1/1.3.1/1.1.1
+target: N18 @ 1.1.1/1.3.1/1.1.18
+type: asserts
+weight: 3
+family: dense (person->asserts)
+edge: E9
+N1 -needs(2)-> N11
+source: N1 @ 1.1.1/1.3.1/1.1.1
+target: N11 @ 1.1.1/1.2.1/1.1.11
+type: needs
+weight: 2
+family: non-dense
+edge: E10
+N1 -needs(2)-> N19
+source: N1 @ 1.1.1/1.3.1/1.1.1
+target: N19 @ 1.1.1/1.2.1/1.1.19
+type: needs
+weight: 2
+family: non-dense
+edge: E11
+N11 -blocked_by(3)-> N12
+source: N11 @ 1.1.1/1.2.1/1.1.11
+target: N12 @ 1.1.1/1.2.1/1.1.12
+type: blocked_by
+weight: 3
+family: dense (ask->blocked_by)
+edge: E12
+N19 -blocked_by(3)-> N13
+source: N19 @ 1.1.1/1.2.1/1.1.19
+target: N13 @ 1.1.1/1.2.1/1.1.13
+type: blocked_by
+weight: 3
+family: dense (ask->blocked_by)
+edge: E13
+N6 -supports(3)-> N18
+source: N6 @ 1.1.1/1.3.1/1.1.6
+target: N18 @ 1.1.1/1.3.1/1.1.18
+type: supports
+weight: 3
+family: dense (work->supports)
+edge: E14
+N6 -supports(2)-> N9
+source: N6 @ 1.1.1/1.3.1/1.1.6
+target: N9 @ 1.1.1/1.3.1/1.1.9
+type: supports
+weight: 2
+family: dense (work->supports)
+edge: E15
+N7 -supports(2)-> N9
+source: N7 @ 1.1.1/1.3.1/1.1.7
+target: N9 @ 1.1.1/1.3.1/1.1.9
+type: supports
+weight: 2
+family: dense (work->supports)
+edge: E16
+N8 -evidences(2)-> N10
+source: N8 @ 1.1.1/1.3.1/1.1.8
+target: N10 @ 1.1.1/1.3.1/1.1.10
+type: evidences
+weight: 2
+family: non-dense
+edge: E17
+N18 -enables(2)-> N10
+source: N18 @ 1.1.1/1.3.1/1.1.18
+target: N10 @ 1.1.1/1.3.1/1.1.10
+type: enables
+weight: 2
+family: non-dense
+edge: E18
+N6 -weakens(1)-> N12
+source: N6 @ 1.1.1/1.3.1/1.1.6
+target: N12 @ 1.1.1/1.2.1/1.1.12
+type: weakens
+weight: 1
+family: dense (work->weakens)
+edge: E19
+N7 -weakens(1)-> N12
+source: N7 @ 1.1.1/1.3.1/1.1.7
+target: N12 @ 1.1.1/1.2.1/1.1.12
+type: weakens
+weight: 1
+family: dense (work->weakens)
+edge: E20
+N15 -measures(3)-> N6
+source: N15 @ 1.1.1/1.3.1/1.1.15
+target: N6 @ 1.1.1/1.3.1/1.1.6
+type: measures
+weight: 3
+family: non-dense
+edge: E21
+N14 -measures(3)-> N4
+source: N14 @ 1.1.1/1.3.1/1.1.14
+target: N4 @ 1.1.1/1.3.1/1.1.4
+type: measures
+weight: 3
+family: non-dense
+edge: E22
+N17 -evidences(2)-> N10
+source: N17 @ 1.1.1/1.3.1/1.1.17
+target: N10 @ 1.1.1/1.3.1/1.1.10
+type: evidences
+weight: 2
+family: non-dense
+edge: E23
+N1 -reaches_via(3)-> N16
+source: N1 @ 1.1.1/1.3.1/1.1.1
+target: N16 @ 1.1.1/1.3.1/1.1.16
+type: reaches_via
+weight: 3
+family: non-dense
+edge: E24
+N20 -would_fill(2)-> N11
+source: N20 @ 1.1.1/1.3.1/1.1.20
+target: N11 @ 1.1.1/1.2.1/1.1.11
+type: would_fill
+weight: 2
+family: non-dense
+edge: E25
+N3 -contradicts(3)-> N9
+source: N3 @ 1.1.1/1.3.1/1.1.3
+target: N9 @ 1.1.1/1.3.1/1.1.9
+type: contradicts
+weight: 3
+family: non-dense

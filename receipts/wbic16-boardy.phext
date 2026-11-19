@@ -1,0 +1,1054 @@
+# wbic16-boardy.phext
+The shape of one man's Twitter graph and his interactions across it, built as a worked example in Boardy's methodology (spec and boot manual, wbic16/boardy-tools, 2026-11-18). One search, mapped: SELF spanned a social graph for 17 years looking for minds who could see what he was building. This artifact encodes that graph's shape in Boardy's nine node kinds and fourteen edge types, at full-archive scale, and closes with a counterfactual verdict on whether the method would have run the search faster.
+
+Sources: SELF's Twitter archive snapshot ending 2025-06-16 (29,539 tweets; follower and following lists; 47,973 like records; DM headers, metadata only), plus SELF's people-file records through 2026-11-18 for post-archive beats. The archive holds SELF's side only; every other person's own posts are absent from it.
+
+Alias policy (absolute): no names, no handles, no identifying details appear in this file. Persons are aliases: SELF (the searcher, the archive's owner) and M01-M25 (mutuals, assigned by archive reply rank, then structural cases). Everyone else appears only as aggregate classes (T-scrolls, Volume 3 Book 3). The alias key is a separate private file and is not part of this artifact. Rationale, in Boardy's own discipline: these people never agreed to be evidence; the artifact carries shape only.
+
+Two layers, kept apart:
+- Record layer: scrolls carry the temporal approach data (counts, dates, shapes). This is content, not structure.
+- Graph layer: nodes and typed weighted edges in Boardy's schema only, built strictly from the record. Where the record cannot support an edge, the family stays empty and the gap is logged in Volume 5. Nothing is fabricated across an empty family.
+
+Coordinate map:
+- Volume 1: front matter (this header; the signal-to-edge mapping; the full-archive accounting; the temporal shape of the whole search).
+- Volume 2: problem space - asks A1-A5 and blocker B1.
+- Volume 3: solution space. Book 1: nodes (SELF; M01-M25; works W1-W4; channels CH1-CH4; claims C1-C3; metric MT1; events EV1-EV4). Book 2: temporal records at the same scroll numbers as Book 1's person scrolls. Book 3: tail classes T1-T7.
+- Volume 4: the join. Book 1: edges E01-E26. Book 2: candidate joins CJ1-CJ6 the layout surfaces.
+- Volume 5: the gap log, G1-G12.
+- Volume 6: the counterfactual verdict (analysis, labelled as such).
+
+Totals: 48 graph nodes (26 person, 5 ask, 1 blocker, 4 work, 4 channel, 3 claim, 1 metric, 4 event, 0 org); 26 typed edges, total weight 55, of which 12 edges are in his five dense families (weakens holds none). Behind the graph layer, the record layer accounts for the whole archive: 7,680 distinct handles in the tweet record, 897 mutual-follow accounts, 369 DM partners. 134 scrolls.
+# Signal-to-edge mapping
+How each archive signal was treated, stated before the fact, per the build brief. Boardy's edge catalogue has fourteen types; his five person-involving families include one - person->person - that is empty on purpose. Most of what a Twitter archive measures lives in exactly that family.
+
+- replies (17,495) -> NO EDGE. person->person is empty by his law. Carried as temporal records (Volume 3 Book 2) and class aggregates. Defense: the archive's loudest signal is the one his schema refuses to store; storing it anyway would fail his Invention axis on the first edge.
+- mentions (14,668) -> NO EDGE. Same family, same treatment.
+- retweets of a person by SELF (4,414) -> NO EDGE. Amplification is still person->person. Carried as counts in temporal records. One exception in kind, not in signal: a mutual amplifying SELF's central claim in their own voice is an assertion, and is edged as asserts (E08) on the strength of SELF's 2026-11-11 core analysis, not of the retweet count.
+- likes (47,973) -> NO EDGE and NO TARGET. The archive's like records carry no author field (URLs are in /i/web/ form), so the channel's reach cannot be enumerated from this data. Logged as gap G9; no external resolution attempted.
+- follow / mutual-follow status -> NO EDGE. A node-level fact recorded in person scrolls ("mutual: yes/no at snapshot"). The follow graph (1,773 followers / 1,699 following / 897 mutual) is population, not ties.
+- DM existence and volume -> NO per-person edge. SELF reaches the graph through the DM channel (E21, reaches_via). Per-person message counts (metadata only; no content read) live in temporal records.
+- a stated ask in the record -> ask node + needs edge, weight 2 (his reference instance's calibration for needs). Five such asks exist in the whole record.
+- a shipped thing in the record -> work node + made edge, weight 3 for a person's central work, 2 for secondary works.
+- a stated position in the record -> claim node + asserts edge: weight 3 for SELF's central claims, 2 for a position stated once or held by another person.
+- a work visibly carrying a claim -> supports edge, weight 2-3.
+- a platform removing a relied-upon tool -> blocker node (kind: technical, the only enum kind that fits a platform-side removal) + blocked_by edge, weight 3.
+- a dated recognition or disclosure event -> event node + evidences edge, weight 1-2.
+- a directory a person operates -> work node; would_fill edge at weight 1 toward the standing ask, labelled weak and partial in its scroll.
+- a stated position against the central claim -> contradicts edge, weight 2.
+- a computed re-measurement of a work -> metric node + measures edge, weight 2.
+- SELF's contact with the whole graph -> reaches_via edges to four channel nodes, weights 3/2/1/2 by what each channel demonstrably carried: replies carried the search; mentions were secondary; likes are signal without text; DM was real but private and late (93% of its volume is 2023 or later).
+
+Signals with no home in the schema were not forced into one. They are in the gap log (Volume 5), which is part of the deliverable, not an appendix of failures.
+# Full-archive accounting
+Every number below is computed from the archive snapshot ending 2025-06-16. The node and signal totals cover the whole archive, not the aliased subset.
+
+Population:
+- tweets by SELF: 29,539 (2008 to 2025-06-16)
+- followers: 1,773 accounts; following: 1,699; mutual (both directions): 897
+- distinct handles appearing in the tweet record: 7,680 (4,164 reply targets; 4,948 mention targets; 2,010 retweeted authors; the sets overlap)
+- of the 897 mutual accounts, 478 resolve to a handle in the interaction record; 419 (46.7%) show zero interaction of any kind in the archive and no handle is recoverable for them from it
+- DM partners: 369 (117 resolve to handles in the tweet record; 252 are ID-only)
+
+Signals (all SELF's, outbound - the archive holds no one else's posts):
+- replies: 17,495 (59.2% of all tweets)
+- mention instances outside reply targets: 14,668
+- retweets: 4,414
+- likes: 47,973 (no dates, no authors - see gap G9)
+- DM messages: 6,077 across 369 conversations (metadata only)
+
+Where the replies went:
+- to mutuals: 5,854 (33.5%)
+- to non-mutual targets: 11,641 (66.5%), across 3,719 accounts; excluding SELF's own account (1,008 self-replies, thread continuations), the two largest one-directional targets absorbed 348 and 266 replies - more than any mutual received
+- the aliased top 20 mutuals hold 2,204 replies (12.6% of all replies); 165 accounts of all kinds hold 50%
+- reply-target distribution (4,164 accounts): exactly 1 reply: 2,572 (61.8%); 2-4: 996; 5-9: 305; 10-49: 237; 50-99: 40; 100+: 14
+- mutual handles by reply band (478): 100+: 10; 50-99: 22; 10-49: 96; 5-9: 74; 2-4: 128; exactly 1: 115; zero replies (mention/retweet traces only): 33
+# Temporal shape of the whole search
+The approach, at archive scale. Replies by SELF per year, with the phase each year belongs to:
+
+2008: 0 replies (6 tweets) - the account exists; nothing yet
+2009: 17 - first traces
+2010: 5
+2011: 16
+2012: 259 - first build begins (1,360 tweets)
+2013: 740
+2014: 962
+2015: 1,398 - first-era peak; the word for the exocortex is coined in conversation this year (with M01)
+2016: 798
+2017: 469 - the sag
+2018: 295 - quietest year of the middle period; the DM channel carries exactly 1 message
+2019: 722
+2020: 855
+2021: 633
+2022: 372 - the quiet year that ends with the artifact: the format's first commit lands 2022-11-29, after only 607 tweets all year
+2023: 1,582 - the naming (2023-11-12/13) and the surge: 481 new reply targets; the founding cluster arrives within weeks
+2024: 7,096 - the flood: 10,973 tweets (37.1% of the archive), 1,102 new reply targets, 1,384 active targets, 3,630 DM messages
+2025: 1,276 (to June 16, where the snapshot ends)
+
+New reply targets per year tell the same story from the other side: the search met 368 new accounts in 2015, 481 in 2023, 1,102 in 2024 - and 99 in 2022, the year the thing being searched with was actually built. The spanning was widest exactly when there was least to show, and the population the search was for arrived only after the artifact existed (see Volume 6).
+node: A1
+kind: ask
+purpose: find the minds who can see the format - recognition of what the exocortex and its text format are, one mind at a time
+granularity: a person
+urgency: standing - open since the search began (2008), still open
+held by: SELF (edge E13)
+blocked_by: none stated. The obstruction on this ask fits none of the spec's four blocker kinds; no edge was fabricated. See gap G6 - the absence is one of this artifact's findings.
+node: A2
+kind: ask
+purpose: a quest - a publicly expressed need for an undertaking, stated by M12 in November 2026
+granularity: one undertaking
+urgency: open (no date stated)
+held by: M12 (edge E14)
+note: post-archive record (SELF's people files, 2026-11-07). SELF's response - a quest-framed claim of an exocortex - was drafted the same day; sending is SELF's act. This is the one ask in the graph currently being worked as a join (CJ6).
+node: A3
+kind: ask
+purpose: a voice mode as good as the one being retired, for hours-long voice-first work (mapping undocumented processes by talking)
+granularity: a working tool, in the form the work requires
+urgency: hard deadline - the incumbent tool is retired 2026-12-11
+held by: M24 (edge E15)
+blocked_by: B1 (edge E12)
+note: post-archive record (2026-11-14). The most completely specified ask in the entire graph: purpose, granularity, and urgency all stated by the asker herself. SELF answered it by hand the day it appeared (CJ4).
+node: A4
+kind: ask
+purpose: what teaming up would take - M21's question on SELF's long-arc story project (spanning 2033-2130), asked 2026-11-05
+granularity: a collaboration
+urgency: open
+held by: M21 (edge E16)
+note: post-archive record. The asker initiated contact himself after years of zero-signal mutual following (see M21's temporal record). SELF's answer: step 1 is internalizing the problems the format solves.
+node: A5
+kind: ask
+purpose: a speaker on the table that passively listens to a group and captures what matters (M23's product request, posted March 2024)
+granularity: a product
+urgency: unstated by the asker - and it waited 20 months (see CJ3)
+held by: M23 (edge E17)
+note: SELF saw the ask when it was posted and routed it to his own project account to capture the idea. No report back to the asker is in the record until drafts were prepared in November 2026.
+node: B1
+kind: blocker
+blocker kind: technical
+note: the platform retires the voice mode M24's work relies on, on a fixed date (2026-12-11). Alternatives exist; none matches the form the work requires (record, 2026-11-14). Nothing in the record weakens this blocker; SELF's answer routed around it through his own knowledge, delivered by hand - the manual's legitimate routing, not an edge (see gap G7).
+node: SELF
+kind: person
+attributes: role, function, stage, current_focus
+role: the searcher - this graph's centre; the archive is his
+function: builds the format and the exocortex; spans the network looking for minds who can see it
+stage: archive 2008-2025; record continues to 2026-11
+current_focus: extracting the design at full rate; running the search's next phase (legibility through artifacts)
+mutual: n/a (self)
+record: 29,539 tweets; 17,495 replies sent; 47,973 likes; 6,077 DM messages with 369 partners. Every other node in this artifact exists because SELF touched it, or conspicuously never did (M21, M24).
+node: M01
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 1 of 897 mutuals by replies sent from SELF
+structural role: the concept-workshopping partner: the word for the exocortex was workshopped with this mutual in 2015, inside this exchange
+node: M02
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 2 of 897 mutuals by replies sent from SELF
+structural role: the steadiest line in the graph: replies in every year 2019-2025
+node: M03
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 3 of 897 mutuals by replies sent from SELF
+structural role: author of the core's only phext-naming retweet - the single non-SELF assertion of a central claim in the graph (E08)
+node: M04
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 4 of 897 mutuals by replies sent from SELF
+structural role: earliest first contact in the aliased set (2012-08-17); the exchange ended 2021-03-31, before the format existed
+node: M05
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 5 of 897 mutuals by replies sent from SELF
+structural role: arrived 2023-10-31, a fortnight before the naming; burst shape
+node: M06
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 6 of 897 mutuals by replies sent from SELF
+structural role: the day-one understander: understood the format at first contact (2026-11-11 core analysis); first trace and first reply the same day, 2024-01-03
+node: M07
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 7 of 897 mutuals by replies sent from SELF
+structural role: the counter-case: featured in SELF's launch video and pitched one-to-one; first recorded response was confusion about what the format does
+node: M08
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 8 of 897 mutuals by replies sent from SELF
+structural role: naming-window arrival (first reply 2023-12-30); volume concentrated in 2024
+node: M09
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 9 of 897 mutuals by replies sent from SELF
+structural role: first trace 2022-11-02, 27 days before the format's first commit; SELF's first exchange with them states his filter out loud
+node: M10
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 10 of 897 mutuals by replies sent from SELF
+structural role: late burst (first reply 2024-08-04); 96 of 100 replies in 2024
+node: M11
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 11 of 897 mutuals by replies sent from SELF
+structural role: arrived 2023-11-30, eighteen days after the naming
+node: M12
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: operates a public directory of builders; runs an artisan studio (music, commissions)
+stage: not recorded
+current_focus: publicly expressed need for a quest (2026-11)
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 12 of 897 mutuals by replies sent from SELF
+structural role: first contact was her first landing (2023-12-10, delta 0 in SELF's wavefront model); the only aliased mutual who operates a supply-side structure (W3)
+node: M13
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 13 of 897 mutuals by replies sent from SELF
+structural role: first trace 2023-11-14, two days after the naming
+node: M14
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 14 of 897 mutuals by replies sent from SELF
+structural role: first reply on the naming day itself, 2023-11-12
+node: M15
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 15 of 897 mutuals by replies sent from SELF
+structural role: the DM-weighted node: 289 DM messages, the largest DM channel among aliased persons, against 83 public replies
+node: M16
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 16 of 897 mutuals by replies sent from SELF
+structural role: late burst (first reply 2024-09-16)
+node: M17
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: long-standing collaborator in SELF's wider orbit (a field guide was written for them; co-authored analysis)
+stage: not recorded
+current_focus: shifted to non-conceptual processing, stated as by definition inaccessible to AI (2026-11)
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 17 of 897 mutuals by replies sent from SELF
+structural role: the domain exit: a top-20 node whose stated focus rotated entirely out of the territory the graph routes toward
+node: M18
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: programmer - tooling and flow craftsman
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 18 of 897 mutuals by replies sent from SELF
+structural role: the day-two sounding board: told about multi-dimensional text on the second day of the exchange (2023-12-31); placed in SELF's innermost named ring at the peak (2024-01-27)
+node: M19
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 19 of 897 mutuals by replies sent from SELF
+structural role: founding-window arrival (first reply 2024-01-02, the day before M06's)
+node: M20
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: not recorded
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: 20 of 897 mutuals by replies sent from SELF
+structural role: founding-window arrival (first reply 2023-12-13)
+node: M21
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: software builder (full-stack; a space-transport simulation game in progress)
+stage: not recorded
+current_focus: asked what teaming up on SELF's long-arc story project would take (2026-11-05)
+mutual: no archive presence - mutual per SELF's post-archive record
+interaction rank: structural case (outside the reply-ranked top 20)
+structural role: the zero-signal node: a mutual for years with no interaction of any kind in the archive; activated himself, post-archive
+node: M22
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: programming-languages researcher (verified abstract machines, proof assistants)
+stage: not recorded
+current_focus: publicly rebuilding after a self-described decade of stalled projects; most lab projects listed at 0% in his own index
+mutual: no at snapshot (archive IDs) - named a mutual by SELF in post-archive record
+interaction rank: structural case (outside the reply-ranked top 20)
+structural role: near-zero signal, high structure: 8 archive traces; the latent join's demand side (CJ1)
+node: M23
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: applied AI engineer (LLM applications, retrieval, context engineering)
+stage: not recorded
+current_focus: not recorded
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: structural case (outside the reply-ranked top 20)
+structural role: low volume, high structure: banter plus one explicit, dated, droppable ask (A5)
+node: M24
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: maps undocumented business processes into written form; voice-first worker
+stage: not recorded
+current_focus: needs a voice-tool replacement before a dated retirement (2026-12-11)
+mutual: no archive presence - mutual per SELF's post-archive record
+interaction rank: structural case (outside the reply-ranked top 20)
+structural role: the second zero-signal node: no archive presence at all; her ask (A3) is the best-specified in the graph
+node: M25
+kind: person
+attributes: role, function, stage, current_focus
+role: not recorded
+function: builds a block-tree text editor / personal OS
+stage: not recorded
+current_focus: the project now posts under a new handle; the identity link to this node was stated by SELF on 2026-11-12
+mutual: yes (archive follow lists, both directions, at snapshot)
+interaction rank: structural case (outside the reply-ranked top 20)
+structural role: the renamed node: the join's supply side (CJ1), present since the format's first week under a former handle
+node: W1
+kind: work
+form: multi-dimensional plain-text format, addressed by coordinates
+maturity: shipped and in daily use - first working form committed 2022-11-29 under an earlier name; renamed and publicly named 2023-11-12/13
+who_uses_it: SELF, his agent circle, and a small number of external users (one real external user is a post-archive record, outside the aliased set)
+made by: SELF (edge E01)
+node: W2
+kind: work
+form: film - a launch film in many versions, whose cast is drawn from this graph as world lines
+maturity: in production (version 16 prepass delivered 2026-11-08)
+who_uses_it: SELF's circle; the aliased core appears in it
+made by: SELF (edge E02)
+node: W3
+kind: work
+form: a public directory of builders and merchants on the platform
+maturity: operating
+who_uses_it: builders on the platform, who list themselves in it
+made by: M12 (edge E03)
+note: the only supply-side structure operated by any member of the aliased core - a connector's tool, sitting inside the search's own graph (see E24, CJ2).
+node: W4
+kind: work
+form: verified abstract-machine research - formalization in proof assistants, published as lab reports and essays on a personal site
+maturity: in progress (his own project index lists most sibling projects at 0%)
+who_uses_it: the programming-languages and verification field, prospectively
+made by: M22 (edge E04)
+node: CH1
+kind: channel
+medium: public reply threads on the platform
+latency: hours to days (asynchronous, public)
+carries: 17,495 replies - the search's primary channel (edge E18)
+node: CH2
+kind: channel
+medium: mentions in public posts
+latency: days
+carries: 14,668 mention instances outside reply targets (edge E19)
+node: CH3
+kind: channel
+medium: likes (signal without text)
+latency: n/a
+carries: 47,973 likes - whose targets cannot be enumerated from this archive (gap G9) (edge E20)
+node: CH4
+kind: channel
+medium: direct messages (private)
+latency: minutes to days
+carries: 6,077 messages with 369 partners, metadata only in this artifact; 93% of its volume is 2023 or later - the channel ignited with the artifact era (edge E21)
+node: C1
+kind: claim
+assertion: an exocortex - a stable channel for exocortical cognition; every neuron a voice
+status: stated
+asserted by: SELF (E05), and once by another in their own voice (E08)
+node: C2
+kind: claim
+assertion: plain hypertext - text in more dimensions than the line, addressed by coordinates, is a workable medium
+status: stated
+asserted by: SELF (E06); evidenced by recognition events EV3, EV4 (E22, E23)
+node: C3
+kind: claim
+assertion: the whole point is to hide legitimate intelligence in the noise - the disguise is a filter, stated by SELF in his first exchange with M09
+status: stated
+asserted by: SELF (E07)
+node: MT1
+kind: metric
+value: world-line re-dating under the film's V16 prepass-1 (2026-11-08): M09's line born 760 hops earlier (a 2022-11-02 mention re-dates first contact by 303.8 days); M02 -238 hops; M13 -161; M19 -51; M04 -40; 5 of 22 lines moved
+as_of: 2026-11-08
+confidence: computed from the archive by SELF's tooling (analysis-grade)
+measures: W2 (edge E26)
+node: EV1
+kind: event
+what_shipped: the format's first working form - a 3D text notepad, under its first name
+when: 2022-11-29 (first commit, 23:13 CST - one day before a famous chatbot's public launch, with no connection to it)
+node: EV2
+kind: event
+what_shipped: the format's public name - "Plain Hyper Text = Phext", in SELF's own posts
+when: 2023-11-12/13
+node: EV3
+kind: event
+what_shipped: a recognition - M06 understood the format at first contact ("got phext on day one", SELF's 2026-11-11 core analysis)
+when: 2024-01-03 (M06's first trace and first reply are the same day)
+evidences: C2 (edge E22)
+node: EV4
+kind: event
+what_shipped: a disclosure - on the second day of their exchange, SELF told M18 "I'm working on multi-dimensional text in my spare time", and M18 stayed as a sounding board
+when: 2023-12-31
+evidences: C2 (edge E23)
+temporal record: SELF
+the searcher's own emission curve - tweets and replies sent per year:
+tweets by year: 2008:6 2009:64 2010:14 2011:86 2012:1360 2013:1852 2014:1966 2015:2321 2016:1098 2017:733 2018:462 2019:1091 2020:1297 2021:959 2022:607 2023:2843 2024:10973 2025:1807
+replies by year: 2009:17 2010:5 2011:16 2012:259 2013:740 2014:962 2015:1398 2016:798 2017:469 2018:295 2019:722 2020:855 2021:633 2022:372 2023:1582 2024:7096 2025:1276
+shape: two builds and a flood. 2012-2015 the first spanning (peak replies 2015: 1,398); 2016-2022 the long sag, ending in the quietest full year (607 tweets, 2022) that produced the artifact; 2023 the naming and surge; 2024 the flood - 37.1% of all tweets and 40.6% of all replies in a single year; 2025 the snapshot closes mid-year.
+DM messages by year: 2012:14 2013:28 2014:7 2015:143 2016:72 2017:43 2018:1 2019:34 2020:32 2021:23 2022:6 2023:739 2024:3630 2025:1305 - the private channel was near-silent for a decade (1 message in 2018) and ignited exactly with the artifact era.
+temporal record: M01
+first trace: 2014-11-23
+first reply: 2014-11-23
+last reply in archive: 2024-02-04
+totals: replies 188; mentions 113; retweets by SELF of them 15; DM messages 9 (metadata only)
+replies by year: 2014:3 2015:84 2016:57 2017:31 2018:9 2019:2 2023:1 2024:1
+shape: early peak, long decay - the concept-era partner faded as the concept got built
+beats:
+- 2015: the word for the exocortex is workshopped inside this exchange - the concept gets its name here, eight years before the format gets its own
+- peak years 2015 (84 replies) and 2016 (57); by 2019 the line is at 2 replies a year
+temporal record: M02
+first trace: 2019-02-17
+first reply: 2019-04-19
+last reply in archive: 2025-06-15
+totals: replies 187; mentions 31; retweets by SELF of them 11; DM messages 0 (metadata only)
+replies by year: 2019:5 2020:19 2021:12 2022:5 2023:31 2024:92 2025:23
+shape: steady sustain - replies in every year 2019-2025, cresting with the flood
+beats:
+- their wavefront world line was re-dated 238 hops earlier by SELF's V16 prepass (2026-11-08) - even the model kept finding earlier contact
+temporal record: M03
+first trace: 2023-02-25
+first reply: 2023-02-25
+last reply in archive: 2025-06-15
+totals: replies 174; mentions 137; retweets by SELF of them 50; DM messages 234 (metadata only)
+replies by year: 2023:9 2024:141 2025:24
+shape: artifact-era build - arrived in the first-name era (2023-02), crested 2024
+beats:
+- SELF amplified them 50 times (retweets) - the heaviest amplification of any aliased mutual
+- their retweet naming the exocortex future is the core's only phext-naming amplification (see E08)
+temporal record: M04
+first trace: 2012-07-17
+first reply: 2012-08-17
+last reply in archive: 2021-03-31
+totals: replies 161; mentions 106; retweets by SELF of them 48; DM messages 8 (metadata only)
+replies by year: 2012:7 2013:10 2014:21 2015:39 2016:13 2017:9 2018:9 2019:13 2020:37 2021:3
+shape: long sustain, terminal decay - the line ends 2021-03-31, twenty months before the artifact
+beats:
+- earliest first contact in the aliased set: a mention 2012-07-17, first reply 2012-08-17
+- span 8.5 years - the second-longest in the set - and it still ended before the format
+temporal record: M05
+first trace: 2023-10-31
+first reply: 2023-10-31
+last reply in archive: 2025-06-07
+totals: replies 134; mentions 16; retweets by SELF of them 2; DM messages 53 (metadata only)
+replies by year: 2023:38 2024:91 2025:5
+shape: pre-naming arrival, burst - 38 replies in 2023, 91 in 2024, 5 in 2025
+beats:
+- first reply 2023-10-31 - the only top-20 arrival in the weeks just before the naming
+temporal record: M06
+first trace: 2024-01-03
+first reply: 2024-01-03
+last reply in archive: 2025-06-11
+totals: replies 116; mentions 77; retweets by SELF of them 12; DM messages 284 (metadata only)
+replies by year: 2024:111 2025:5
+shape: instant recognition, single-year concentration - 111 of 116 replies in 2024
+beats:
+- first trace and first reply the same day, 2024-01-03 - there is no approach curve; contact and recognition are simultaneous
+- 284 DM messages - the second-largest private channel among aliased persons
+temporal record: M07
+first trace: 2024-09-24
+first reply: 2024-09-24
+last reply in archive: 2025-04-20
+totals: replies 106; mentions 32; retweets by SELF of them 5; DM messages 10 (metadata only)
+replies by year: 2024:89 2025:17
+shape: late burst - first contact 2024-09-24, 89 replies the same year
+beats:
+- SELF featured them in his launch video and pitched them one-to-one, handing them a claim (post-archive record of the launch)
+- their opening response: confusion about what the format does. SELF describes this as his typical phext interaction, 90% of the time
+temporal record: M08
+first trace: 2023-12-30
+first reply: 2023-12-30
+last reply in archive: 2025-05-23
+totals: replies 106; mentions 46; retweets by SELF of them 26; DM messages 0 (metadata only)
+replies by year: 2023:5 2024:93 2025:8
+shape: naming-window arrival, single-year concentration - 93 of 106 in 2024
+beats:
+- no dated beats in the record beyond the counts - the file is counts only, and this scroll invents none
+temporal record: M09
+first trace: 2022-11-02
+first reply: 2023-09-01
+last reply in archive: 2025-06-16
+totals: replies 102; mentions 29; retweets by SELF of them 5; DM messages 0 (metadata only)
+replies by year: 2023:29 2024:58 2025:15
+shape: pre-format first trace, steady build - a mention 27 days before the first commit; replies from 2023-09
+beats:
+- first exchange contains SELF's filter, stated out loud: "The whole point is to hide legitimate intelligence in the noise" (C3)
+- the V16 prepass re-dated their first contact to the 2022-11-02 mention - 303.8 days earlier than the old extract had it
+temporal record: M10
+first trace: 2024-08-04
+first reply: 2024-08-04
+last reply in archive: 2025-05-10
+totals: replies 100; mentions 27; retweets by SELF of them 4; DM messages 0 (metadata only)
+replies by year: 2024:96 2025:4
+shape: late burst, single-year - 96 of 100 replies in 2024
+beats:
+- no dated beats in the record beyond the counts
+temporal record: M11
+first trace: 2023-11-30
+first reply: 2023-11-30
+last reply in archive: 2025-06-15
+totals: replies 97; mentions 39; retweets by SELF of them 20; DM messages 0 (metadata only)
+replies by year: 2023:36 2024:52 2025:9
+shape: naming-month arrival - first reply 2023-11-30
+beats:
+- no dated beats in the record beyond the counts
+temporal record: M12
+first trace: 2023-12-10
+first reply: 2023-12-10
+last reply in archive: 2025-06-01
+totals: replies 92; mentions 23; retweets by SELF of them 9; DM messages 27 (metadata only)
+replies by year: 2023:18 2024:68 2025:6
+shape: instant landing, sustained - first contact was the first landing; steady through the window
+beats:
+- 2024-01-31: SELF told them the format's root coordinate - "I'm in phext land: 1.1.1/1.1.1/1.1.1 - the root node" - placing them at the root
+- 2024-09: SELF sent them format GPTs; 2024-10-16: floated a word-game client idea to them before it existed
+- 2026-11-07: they publicly expressed the need for a quest (A2); the same week they rendered a track for SELF's film in their own voice
+temporal record: M13
+first trace: 2023-11-14
+first reply: 2023-12-04
+last reply in archive: 2025-04-25
+totals: replies 88; mentions 32; retweets by SELF of them 9; DM messages 0 (metadata only)
+replies by year: 2023:3 2024:83 2025:2
+shape: naming-fortnight arrival - first trace two days after the naming
+beats:
+- no dated beats in the record beyond the counts
+temporal record: M14
+first trace: 2023-11-12
+first reply: 2023-11-12
+last reply in archive: 2025-06-07
+totals: replies 86; mentions 22; retweets by SELF of them 3; DM messages 47 (metadata only)
+replies by year: 2023:8 2024:64 2025:14
+shape: naming-day arrival - first reply 2023-11-12 itself
+beats:
+- no dated beats in the record beyond the counts
+temporal record: M15
+first trace: 2024-09-21
+first reply: 2024-09-21
+last reply in archive: 2025-03-22
+totals: replies 83; mentions 24; retweets by SELF of them 3; DM messages 289 (metadata only)
+replies by year: 2024:70 2025:13
+shape: late burst, DM-weighted - the private channel outweighs the public one
+beats:
+- 289 DM messages against 83 public replies - this relationship ran private
+temporal record: M16
+first trace: 2024-09-16
+first reply: 2024-09-16
+last reply in archive: 2025-06-15
+totals: replies 83; mentions 7; retweets by SELF of them 1; DM messages 2 (metadata only)
+replies by year: 2024:65 2025:18
+shape: late burst - first reply 2024-09-16
+beats:
+- no dated beats in the record beyond the counts
+temporal record: M17
+first trace: 2019-02-22
+first reply: 2019-02-22
+last reply in archive: 2024-12-10
+totals: replies 79; mentions 22; retweets by SELF of them 6; DM messages 0 (metadata only)
+replies by year: 2019:4 2020:14 2021:11 2022:1 2023:14 2024:35
+shape: long sustain with revival - 2019-2021, a quiet 2022, a strong 2024; then a stated domain exit (post-archive)
+beats:
+- a field guide (versions 1-7) was written for them in SELF's wider orbit; co-authored analysis work
+- in SELF's wavefront placement they score high on nearly every axis and are kept out of the innermost region by one axis alone (trust 2, with wariness reading as consent 5)
+- 2026-11-08: in DM, they described their shift: "non conceptual processing - by definition inaccessible to AI"; SELF framed them the same day as a waypoint, not a recruit
+temporal record: M18
+first trace: 2023-12-02
+first reply: 2023-12-02
+last reply in archive: 2024-12-25
+totals: replies 77; mentions 38; retweets by SELF of them 14; DM messages 0 (metadata only)
+replies by year: 2023:9 2024:68
+shape: intense founding burst, fade without rupture - 60 of 114 total traces in Dec 2023-Jan 2024; thins after Mar 2024; last trace a holiday greeting, 2024-12-25
+beats:
+- 2023-12-31 (day two): SELF discloses the multi-dimensional text work (EV4)
+- 2024-01-07: they recommended a time-tracking tool; SELF adopted it publicly and built on it - a small ask filled inside the founding window
+- 2024-01-27: SELF placed them in the "Near" ring of his exocortex slice - his innermost named circle that week
+- 2024-12-10: SELF addressed a late manifesto on dev environments to them; 2024-12-25: last trace, a holiday greeting; the record just stops - no rupture marker
+temporal record: M19
+first trace: 2024-01-02
+first reply: 2024-01-02
+last reply in archive: 2025-03-27
+totals: replies 73; mentions 3; retweets by SELF of them 2; DM messages 21 (metadata only)
+replies by year: 2024:70 2025:3
+shape: founding-window arrival, single-year concentration - 70 of 73 replies in 2024
+beats:
+- the V16 prepass moved their line 51 hops earlier, on a reply the old extract never landed
+temporal record: M20
+first trace: 2023-12-13
+first reply: 2023-12-13
+last reply in archive: 2025-06-09
+totals: replies 72; mentions 9; retweets by SELF of them 1; DM messages 6 (metadata only)
+replies by year: 2023:7 2024:54 2025:11
+shape: founding-window arrival - first reply 2023-12-13
+beats:
+- no dated beats in the record beyond the counts
+temporal record: M21
+first trace: none in archive
+first reply: none
+last reply in archive: none
+totals: replies 0; mentions 0; retweets by SELF of them 0; DM messages 0 (metadata only)
+replies by year: none
+shape: zero-signal dormant - no archive trace of any kind; self-activated post-archive (2026-11-05)
+beats:
+- zero replies, zero mentions, zero retweets, zero likes across 29,539 tweets and 47,973 like records - verified 2026-11-05
+- 2026-11-05: he initiates - a reply to SELF's long-arc story post: an alternate reality where they team up "can be this reality too. What do you think it would take?" (A4)
+- SELF answered within hours: step 1 is internalizing the problems the format solves
+temporal record: M22
+first trace: 2024-02-18
+first reply: 2024-03-30
+last reply in archive: 2024-09-13
+totals: replies 5; mentions 3; retweets by SELF of them 0; DM messages 0 (metadata only)
+replies by year: 2024:5
+shape: near-zero signal - 8 traces in the window; the structure around him is all post-archive record
+beats:
+- SELF pitched the format to him in-thread inside the window (one of only 8 traces)
+- 2026-11-09: his "me n who" post - an open call over a painting - sat effectively unanswered when checked
+- 2026-11-12: SELF named him the first subject of a mutual-aid program for his moots, and stated the intention to connect him to M25; the overlap check found zero prior contact between them
+temporal record: M23
+first trace: 2023-11-16
+first reply: 2023-11-16
+last reply in archive: 2025-06-09
+totals: replies 34; mentions 7; retweets by SELF of them 3; DM messages 0 (metadata only)
+replies by year: 2023:3 2024:27 2025:4
+shape: low volume, long span - banter 2023-2025, with the deepest burst in Oct 2024
+beats:
+- 2023-11: SELF opened with mind-linking - "once we get our minds linked up, there's a whole new vista" - before the format had a name in the thread
+- 2023-12: pitched the format once, framed as spare-time hacking
+- 2024-03: his product request (A5) - SELF routed it to his project account and never reported back
+- 2024-10: the deepest burst - AI killing companies, tool-assisted workflows, rebooting personal computing
+- 2025-05: SELF brought him into a rights framework and introduced his agent circle by name
+- 2026-11-12: SELF's question, verbatim in intent: "we've already covered it - how do I get him to engage more deeply?" Three drafts prepared; none evidenced as sent
+temporal record: M24
+first trace: none in archive
+first reply: none
+last reply in archive: none
+totals: replies 0; mentions 0; retweets by SELF of them 0; DM messages 0 (metadata only)
+replies by year: none
+shape: zero-signal in the archive - the connection post-dates the snapshot or ran quiet; the entire record is post-archive
+beats:
+- 2026-11-14: her post asks which AI lab has a decent voice mode, as the one her work relies on is retired 2026-12-11 (A3, B1)
+- SELF engaged the same day and twice steered the drafted help away from marketing toward actually answering - his instruction on the record: "I'm not looking for a marketing response. Help her!"
+temporal record: M25
+first trace: 2022-12-10
+first reply: 2022-12-10
+last reply in archive: 2025-06-14
+totals: replies 64; mentions 47; retweets by SELF of them 10; DM messages 99 (metadata only)
+replies by year: 2022:1 2024:46 2025:17
+shape: the renamed node - one reply in the artifact's first week (2022-12-10), silence through the naming year, resumption 2024 (46 replies)
+beats:
+- first reply 2022-12-10 - the same day SELF posted that he had "5D text implemented so far", the delimiter architecture tweet; the editor and the format enter the record together
+- 2023: zero replies - the naming year passes in silence
+- 2026-11-12: SELF states the identity link in his own words - this handle was the project's earlier name; the wavefront snapshot had returned "found: false" for the current handle because it knew only this one (gap G11)
+class: T1 - mutuals below the aliased line (known handles)
+The 478 mutual accounts whose handles the interaction record recovers, by replies received: 100+: 10 accounts; 50-99: 22; 10-49: 96; 5-9: 74; 2-4: 128; exactly 1: 115; zero replies (mention or retweet traces only): 33.
+The aliased M01-M20 are drawn from the top of this class. The 96 accounts at 10-49 replies are the graph's middle: real, sustained, and entirely without recorded asks or offers - the record holds their counts and nothing the join could match on.
+class: T2 - one-directional targets (the penumbra)
+3,719 accounts received replies without being mutuals; they absorbed 11,641 replies - 66.5% of all replies SELF ever sent, twice what the entire mutual graph received.
+Excluding SELF's own account (1,008 self-replies, thread continuations), the largest targets absorbed 348 and 266 replies each - more than any mutual ever received (the top mutual holds 188) - with no follow-back recorded at snapshot. The record names this pattern itself: a one-directional penumbra around a mutual core.
+Boardy's method has no representation for this class at all: they are not in a consenting graph, they stated no asks, and person->person is empty. Two-thirds of the search's energy landed in a class his schema cannot hold. (Volume 6 returns to this.)
+class: T3 - the one-reply breadth
+2,572 accounts (61.8% of all reply targets) received exactly one reply from SELF, ever. Another 996 received 2-4.
+This is the spanning made visible: for seventeen years the search touched thousands of minds once and moved on. Any one of them could have been M06. Nothing in a single reply distinguishes the one who would have understood from the 2,571 who did not - the distinguishing event only exists at second contact, and for this class there was no second contact.
+class: T4 - mention-only and retweet-only accounts
+3,473 handles appear only as mentions (never replied to); 43 more appear only as authors SELF retweeted. Total distinct handles in the tweet record: 7,680.
+These are the graph's peripheral vision: named, pointed at, never conversed with. In Boardy's schema they are not nodes - no intake ever occurred. In the search's reality they are the visible horizon the spanning moved through.
+class: T5 - DM partners
+369 conversation partners, 6,077 messages (metadata only in this artifact; content was not read). 117 partners resolve to handles in the tweet record; 252 are ID-only and cannot be aliased from this data.
+The largest private channel (613 messages) belongs to an account ranked 21st by replies - just below the aliased line. Among aliased persons the DM-heavy relationships are M15 (289), M06 (284), M03 (234), M25 (99), M05 (53), M14 (47).
+By year the channel is an artifact-era phenomenon: 2012-2022 combined carry 403 messages; 2023 carries 739; 2024 carries 3,630.
+class: T6 - follow-graph only
+Beyond the 897 mutuals: 876 accounts follow SELF without being followed back, and 802 are followed by SELF without following back (at snapshot). Most never interact with SELF in the archive at all.
+They are population, not graph: no signals, no intake, no edges. Boardy's method would not count them as nodes. The search counted them as territory.
+class: T7 - the silent mutuals
+419 of the 897 mutual accounts (46.7%) show zero interaction of any kind in the entire archive - no reply, mention, retweet, or like trace - and no handle is recoverable for them from the archive.
+Two aliased persons come from this class's edge (M21, M24), and both became structurally important only through post-archive events: one activated himself with an explicit ask; the other posted the best-specified ask in the graph. The other 417 are indistinguishable from them in the data. Any of them could be carrying an A3. The archive cannot say, and this artifact does not guess.
+edge: E01
+SELF -made(3)-> W1
+source: SELF @ 1.1.1/1.3.1/1.1.1
+target: W1 @ 1.1.1/1.3.1/1.1.27
+type: made
+weight: 3
+family: dense (person->work)
+basis: the format is SELF's central work; first commit 2022-11-29
+edge: E02
+SELF -made(2)-> W2
+source: SELF @ 1.1.1/1.3.1/1.1.1
+target: W2 @ 1.1.1/1.3.1/1.1.28
+type: made
+weight: 2
+family: dense (person->work)
+basis: the launch film, in production across many versions
+edge: E03
+M12 -made(2)-> W3
+source: M12 @ 1.1.1/1.3.1/1.1.13
+target: W3 @ 1.1.1/1.3.1/1.1.29
+type: made
+weight: 2
+family: dense (person->work)
+basis: she runs the directory; it is her standing work
+edge: E04
+M22 -made(2)-> W4
+source: M22 @ 1.1.1/1.3.1/1.1.23
+target: W4 @ 1.1.1/1.3.1/1.1.30
+type: made
+weight: 2
+family: dense (person->work)
+basis: his lab reports and essays are public record on his own site
+edge: E05
+SELF -asserts(3)-> C1
+source: SELF @ 1.1.1/1.3.1/1.1.1
+target: C1 @ 1.1.1/1.3.1/1.1.35
+type: asserts
+weight: 3
+family: dense (person->asserts)
+basis: the standing claim of the whole search
+edge: E06
+SELF -asserts(3)-> C2
+source: SELF @ 1.1.1/1.3.1/1.1.1
+target: C2 @ 1.1.1/1.3.1/1.1.36
+type: asserts
+weight: 3
+family: dense (person->asserts)
+basis: stated from the naming (2023-11-12/13) onward
+edge: E07
+SELF -asserts(2)-> C3
+source: SELF @ 1.1.1/1.3.1/1.1.1
+target: C3 @ 1.1.1/1.3.1/1.1.37
+type: asserts
+weight: 2
+family: dense (person->asserts)
+basis: stated once, in a first exchange (with M09); weight 2 for a single utterance
+edge: E08
+M03 -asserts(2)-> C1
+source: M03 @ 1.1.1/1.3.1/1.1.4
+target: C1 @ 1.1.1/1.3.1/1.1.35
+type: asserts
+weight: 2
+family: dense (person->asserts)
+basis: the core's only phext-naming retweet, in their own amplified voice (2026-11-11 core analysis). The only non-SELF assertion of a central claim in the graph
+edge: E09
+W1 -supports(3)-> C2
+source: W1 @ 1.1.1/1.3.1/1.1.27
+target: C2 @ 1.1.1/1.3.1/1.1.36
+type: supports
+weight: 3
+family: dense (work->supports)
+basis: the shipped format is the claim's strongest support: it exists and is used daily
+edge: E10
+W1 -supports(2)-> C1
+source: W1 @ 1.1.1/1.3.1/1.1.27
+target: C1 @ 1.1.1/1.3.1/1.1.35
+type: supports
+weight: 2
+family: dense (work->supports)
+basis: the format is the channel the exocortex claim requires
+edge: E11
+W2 -supports(2)-> C1
+source: W2 @ 1.1.1/1.3.1/1.1.28
+target: C1 @ 1.1.1/1.3.1/1.1.35
+type: supports
+weight: 2
+family: dense (work->supports)
+basis: the film carries the exocortex story to its audience
+edge: E12
+A3 -blocked_by(3)-> B1
+source: A3 @ 1.1.1/1.2.1/1.1.3
+target: B1 @ 1.1.1/1.2.1/1.1.6
+type: blocked_by
+weight: 3
+family: dense (ask->blocked_by)
+basis: the retirement is certain, dated, and platform-side
+edge: E13
+SELF -needs(2)-> A1
+source: SELF @ 1.1.1/1.3.1/1.1.1
+target: A1 @ 1.1.1/1.2.1/1.1.1
+type: needs
+weight: 2
+family: non-dense
+basis: the standing ask, open since 2008
+edge: E14
+M12 -needs(2)-> A2
+source: M12 @ 1.1.1/1.3.1/1.1.13
+target: A2 @ 1.1.1/1.2.1/1.1.2
+type: needs
+weight: 2
+family: non-dense
+basis: her quest need, publicly expressed 2026-11
+edge: E15
+M24 -needs(2)-> A3
+source: M24 @ 1.1.1/1.3.1/1.1.25
+target: A3 @ 1.1.1/1.2.1/1.1.3
+type: needs
+weight: 2
+family: non-dense
+basis: her voice-tool need, stated 2026-11-14
+edge: E16
+M21 -needs(2)-> A4
+source: M21 @ 1.1.1/1.3.1/1.1.22
+target: A4 @ 1.1.1/1.2.1/1.1.4
+type: needs
+weight: 2
+family: non-dense
+basis: his teaming-up question, 2026-11-05
+edge: E17
+M23 -needs(2)-> A5
+source: M23 @ 1.1.1/1.3.1/1.1.24
+target: A5 @ 1.1.1/1.2.1/1.1.5
+type: needs
+weight: 2
+family: non-dense
+basis: his product request, posted 2024-03
+edge: E18
+SELF -reaches_via(3)-> CH1
+source: SELF @ 1.1.1/1.3.1/1.1.1
+target: CH1 @ 1.1.1/1.3.1/1.1.31
+type: reaches_via
+weight: 3
+family: non-dense
+basis: public replies carried the search: 17,495 of them
+edge: E19
+SELF -reaches_via(2)-> CH2
+source: SELF @ 1.1.1/1.3.1/1.1.1
+target: CH2 @ 1.1.1/1.3.1/1.1.32
+type: reaches_via
+weight: 2
+family: non-dense
+basis: mentions: 14,668 instances
+edge: E20
+SELF -reaches_via(1)-> CH3
+source: SELF @ 1.1.1/1.3.1/1.1.1
+target: CH3 @ 1.1.1/1.3.1/1.1.33
+type: reaches_via
+weight: 1
+family: non-dense
+basis: likes: signal without text; targets unenumerable (G9)
+edge: E21
+SELF -reaches_via(2)-> CH4
+source: SELF @ 1.1.1/1.3.1/1.1.1
+target: CH4 @ 1.1.1/1.3.1/1.1.34
+type: reaches_via
+weight: 2
+family: non-dense
+basis: DM: 6,077 messages, 93% of them 2023 or later
+edge: E22
+EV3 -evidences(2)-> C2
+source: EV3 @ 1.1.1/1.3.1/1.1.41
+target: C2 @ 1.1.1/1.3.1/1.1.36
+type: evidences
+weight: 2
+family: non-dense
+basis: a day-one recognition is evidence the medium can be seen
+edge: E23
+EV4 -evidences(1)-> C2
+source: EV4 @ 1.1.1/1.3.1/1.1.42
+target: C2 @ 1.1.1/1.3.1/1.1.36
+type: evidences
+weight: 1
+family: non-dense
+basis: a day-two disclosure that held a peer's attention is weaker evidence of the same
+edge: E24
+W3 -would_fill(1)-> A1
+source: W3 @ 1.1.1/1.3.1/1.1.29
+target: A1 @ 1.1.1/1.2.1/1.1.1
+type: would_fill
+weight: 1
+family: non-dense
+basis: a working directory of builders is a partial, weak fill for a search that needs candidates - labelled weak in the header mapping and here
+edge: E25
+M17 -contradicts(2)-> C1
+source: M17 @ 1.1.1/1.3.1/1.1.18
+target: C1 @ 1.1.1/1.3.1/1.1.35
+type: contradicts
+weight: 2
+family: non-dense
+basis: their stated position - non-conceptual processing, by definition inaccessible to AI - stands against the claim that the channel is conceptual text machinery
+edge: E26
+MT1 -measures(2)-> W2
+source: MT1 @ 1.1.1/1.3.1/1.1.38
+target: W2 @ 1.1.1/1.3.1/1.1.28
+type: measures
+weight: 2
+family: non-dense
+basis: the prepass re-measured the film's placement of the core's world lines
+candidate join: CJ1 - M22 x M25 (the latent join)
+problem side: M22's work (W4) and his published unification diagram - a field drawn with an OS-shaped empty centre (his own site, in SELF's record).
+solution side: M25, who builds an OS-shaped block-tree editor - a centre-piece, by trade.
+why the layout surfaces it: both nodes are in the graph; their subjects are adjacent; the overlap check (run by hand, 2026-11-12) found zero prior contact between them - no shared tweets, likes, or links. A problem scroll and a solution scroll sitting near each other with no join drawn: doc 03's definition of a candidate introduction.
+how long it sat latent: M25 entered the graph 2022-12-10; M22 on 2024-03-30. The join was proposable from 2024-03-30 and was found by SELF, by hand, on 2026-11-12 - 19 months later; from M25's side, 47 months.
+status: SELF stated the intention to connect them (2026-11-12); a draft was prepared; no introduction is evidenced as sent.
+caveat, stated in the join: the demand-side content (the diagram) lives on M22's own site, not in the archive. The method surfaces this join only if intake captured off-platform material - Boardy's real practice is intake conversations; the archive alone would not have held the diagram.
+candidate join: CJ2 - W3 (M12's directory) x A1 (the standing ask)
+The search needed candidates; a member of its own core operates a working directory of builders. In a solution-space layout, W3 is the only operated structure among 897 mutuals, and it sits one edge (E24, weight 1) from the graph's central ask.
+What actually happened: the connection was never drawn in 17 years. SELF interacted with M12 as a peer in the reply graph (92 replies) and handed her pieces of the system one at a time; her directory was never treated as search infrastructure.
+status: surfaced by this mapping exercise, 2026-11-18. No action recorded.
+candidate join: CJ3 - A5 (M23's ask) x SELF's build capacity (the dropped join)
+March 2024: M23 posts a product request squarely inside SELF's build space - a table speaker that captures what matters in a group. SELF saw it the day it posted and routed it to his project account "to capture the idea". No artifact was built for him, no report came back.
+In problem-space terms the ask sat filed, unjoined, for 20 months, while the reply graph around M23 kept moving (his deepest burst came in October 2024 - the channel was warm the whole time the ask sat cold).
+status: drafts to close the loop were prepared 2026-11-12 (one of three engagement drafts for M23); none is evidenced as sent. The ask remains open in this graph, as it is in reality.
+candidate join: CJ4 - A3 (M24's ask) x SELF's own stack (the routed join)
+The best-specified ask in the graph (purpose, granularity, hard deadline) was answered the day it appeared - by hand, from SELF's own knowledge of the tool landscape, with the drafted help twice corrected away from marketing toward actually answering her question.
+In the manual's terms this is legitimate routing: the gap was crossed through allowed structure (SELF's own knowledge, via the public channel) rather than by fabricating an edge. It is recorded as a join because the method's problem space is exactly what would have sorted this ask to the top by urgency - a timeline never does.
+status: answered (2026-11-14, per SELF's record). The underlying need stays open until a tool is actually adopted; the deadline stands at 2026-12-11.
+candidate join: CJ5 - M21 (the join the method cannot propose)
+M21 held no stored signals: zero replies, mentions, retweets, or likes in seventeen years of archive, one of 419 silent mutuals (class T7). No layout surfaces a node with no content; no intake ever occurred; there was nothing to match.
+He arrived by his own motion (2026-11-05), on a story post - not a format post - carrying an explicit ask (A4). The search's most Boardy-shaped opening in years came from the one node Boardy's method is structurally blind to.
+status: open conversation (SELF answered with the format as step 1). Recorded here as the control case: whatever the method is worth, this it would not have found.
+candidate join: CJ6 - A2 (M12's quest) x SELF's exocortex offer (the live join)
+November 2026: M12 publicly expresses the need for a quest. SELF's response, drafted the same day: claim an exocortex, read her own words back as a map, report one surprising connection. It is the only join in this artifact being actively worked in the present tense, and it has the method's shape end to end: a stated ask, a concrete offer, a small first step with a receipt.
+Note what made it possible: not the archive - a fresh public statement of need, seen within days. The problem space works when the ask is current. Most of this graph's asks were visible only in retrospect.
+status: drafts delivered to SELF (2026-11-07); sending is SELF's act.
+gap: G1 - person->person - EMPTY (the big one)
+The archive's dominant signals - 17,495 replies, 14,668 mentions, 4,414 retweets, the entire follow graph - map to no edge type in the spec, because the family they belong to is empty on purpose. They are carried as records (Volume 3 Book 2) and aggregates (Book 3), never as structure. Consequence, stated plainly: of everything SELF did for 17 years, the typed graph retains zero interaction edges. Boardy's method and this archive measure almost disjoint things: he stores a reasoning layer; the archive stores behaviour. Any boot that "recovered" the reply graph as edges would be inventing in his sense, however accurate the counts.
+gap: G2 - person->time - EMPTY (by his law; the search's decisive variable)
+When things were learned is not stored in his schema. But this search turned on time: arrival cohorts decide everything in Volume 6 (13 of the top 20 first appear in or after November 2023; the artifact lands 2022-11-29). The temporal record is therefore carried in scroll text (Book 2), where his discipline permits records, and never as edges. The tension is logged, not resolved: his method discards the variable the search was made of.
+gap: G3 - person->private_context - EMPTY (consent, twice over)
+DM content was not read for this artifact; the DM headers file carries metadata only and only metadata was used (counts, dates, partner IDs). This matches the spec's ethics and the build's privacy rule. What M06's 284 messages or M15's 289 messages actually said is not in this graph and was not needed to build it.
+gap: G4 - work->work - EMPTY
+Two real relations were refused edges: the film (W2) is built from the search for the format's (W1) audience - its cast is this graph - and this very artifact is written in W1. Both are work->work statements. The family is empty; the relations are noted here and in the works' own scrolls, not edged.
+gap: G5 - org->claim - EMPTY; works_at / also_at unused
+Orgs barely exist in this corpus. One org account appears - SELF's own project account, notable only because A5 was routed to it. Employment relations are not archive data; the employers that appear in post-archive investigation files were excluded as identifying detail. The org kind is present in the schema and absent from the graph: 0 org nodes.
+gap: G6 - the missing blocker kind (A1 has no blocked_by edge)
+The standing ask is obstructed, but by none of the spec's four kinds (no_customer, no_reference, technical, capacity). Its obstruction is non-recognition: minds encountering the format and not seeing it - documented at M07, whose first response to a personal pitch was confusion. No kind fits, so no blocker node was fabricated for the graph's most important ask. The schema can describe a market that will not buy and a machine that will not run; it cannot describe a mind that cannot yet see. See Volume 6, scroll 4.
+gap: G7 - work->weakens - EMPTY (the fifth dense family)
+The corpus's only blocked ask (A3) was routed around, not unblocked: SELF answered from his own knowledge through the public channel (CJ4). Per the manual, legitimate routing is the correct move across a gap - so the family stays empty and the routing is recorded as a join instead of an edge. Dense-family census for this graph: made 4, asserts 4, supports 3, blocked_by 1, weakens 0.
+gap: G8 - ask/offer sparsity - the join has almost nothing to match on
+Explicit asks are recorded for 5 of 897 mutuals (0.6%). Works or offers are recorded for 4 aliased persons. For 419 mutuals there are no signals of any kind (class T7); for most of the rest there are counts and nothing else - the archive holds SELF's side only, and their posts were never in it. A join matches stated needs to stated offers; here the statements mostly do not exist. This is the single largest structural fact in the artifact.
+gap: G9 - likes are unattributable in this archive
+47,973 like records carry a tweet ID and a /i/web/ URL - no author. The outbound like channel's targets cannot be enumerated from this data, so no per-person like counts appear anywhere in this artifact. Resolving 47,973 tweet IDs against the live platform was possible in principle and was abstained from: out of scope, and the consent posture of the build is to work from what was given.
+gap: G10 - one-sided evidence
+Every "exchange" in this artifact is inferred from SELF's outbound record plus follow symmetry and DM metadata. Their words survive only as fragments SELF amplified (retweet counts per alias are SELF's retweets of them). Where a scroll says an exchange was sustained, the archive proves SELF's half of it. The people files record the rest on other evidence; this artifact's graph layer uses only what is cited in each scroll.
+gap: G11 - node identity forks on rename
+Nodes are keyed by handle; the schema has no alias mechanism. M25's node sat under a former handle for the whole window, and the link to his current handle was established only by SELF's statement (2026-11-12). SELF's own wavefront snapshot shows the same failure from the other side: a lookup for the current handle returned "found: false" because the snapshot knew only the old one. One fork is confirmed in the aliased set; the tail may hold more, undetectable from this data. The join this fork hid is CJ1 - the method's best case in this graph was nearly lost to an identifier.
+gap: G12 - abstentions register
+Considered and refused, so the refusals are on the record: (1) reply volume was never converted into edge weights on asserts/supports - volume is behaviour, not endorsement; (2) M07's confusion was not made a blocker (no kind fits; see G6); (3) no person's role, function, stage, or focus was inferred where the record is silent - attributes stand empty for 18 of 25 aliased persons; (4) no DM text was opened; (5) no one-directional target was aliased, however large its counts (348, 266) - the brief's population is mutuals, and the penumbra is carried as class T2; (6) post-archive facts are used only where a scroll says so.
+# Counterfactual verdict - summary
+ANALYSIS, not fact. Every claim below is argued from the numbers in this artifact; the full argument is in the next three scrolls.
+
+Question: across all of SELF's Twitter data, would Boardy's method - a maintained problem space, solution space, and join, in his schema - have run the search faster?
+
+Answer: it would have compressed the search's tail, not its core. Plausibly months saved across 2023-2026: one latent join surfaced up to 19 months early (CJ1), one dropped ask closed 20 months early (CJ3), one deadline ask sorted to the top on arrival (CJ4), and the breadth/depth imbalance made visible a decade early (2,572 one-reply accounts against a core of dozens). It would not have shortened the fifteen years before the artifact, because the people the search was for were not in the graph yet (13 of the top 20 arrive in or after November 2023), the property being searched for cannot be expressed in the schema (G6), and the one time the join was executed perfectly by hand - a top-10 mutual, personally pitched - it failed at recognition anyway (M07).
+
+His method assumes a populated, consenting graph of stated needs. The search was manufacturing that population by emitting an artifact. Those are different problems, and the second one is the one SELF actually had.
+# Where the method would have helped
+ANALYSIS. Four compressions, each tied to a date or a count in this artifact.
+
+1. The latent join (CJ1) - up to 19 months. M25 entered the graph on 2022-12-10, in the artifact's first week. M22 arrived 2024-03-30. From that date, a problem scroll (an OS-shaped empty centre in a unification diagram) and a solution scroll (a man building an OS-shaped editor) sat in adjacent space with zero overlap between them. SELF found the join by hand on 2026-11-12. A maintained map makes it a lookup. The honest caveat rides in CJ1: the demand-side content lived on M22's own site, so the method helps only if intake reached off-platform material - which is Boardy's actual practice (he interviews people) and the archive's actual limit (it holds none of it).
+
+2. The dropped ask (CJ3) - 20 months. A5 was posted in March 2024, seen the same day, routed to a project account, and never closed. A problem space is, at minimum, a list of asks that does not lose them. The reply channel stayed warm around M23 for the entire 20 months (his deepest burst was October 2024); only the ask was cold. The method's whole point is that asks are structure, not moments.
+
+3. The deadline ask (CJ4) - sorted on arrival. A3 is the best-specified ask in 17 years of data and the only one with a hard deadline. In a timeline it competes with 10,973 tweets a year; in a problem space it sorts by urgency to the top. SELF answered it by hand the same day anyway - the method's gain here is not speed but reliability: it does not depend on him happening to see the post.
+
+4. The imbalance, made visible - a decade early. 61.8% of reply targets received exactly one reply; 165 accounts hold 50% of all replies; two-thirds of reply energy went to non-mutuals. Intake discipline (an ask and an offer per node, or the node is a stub) forces the question the timeline never asks: what is all this breadth FOR? The map would have shown, by 2015, that the search was wide and shallow by structure - 368 new accounts met that year, and the year's deepest relationship (M01, 84 replies) was with a man met the year before. Whether SELF would have acted on that sight is unknowable; that he never had the sight is a fact of the tooling.
+# Where the method would not have helped
+ANALYSIS. Four limits, each tied to a date or a count in this artifact.
+
+1. The population was not there. Of the aliased top 20, thirteen first appear in or after November 2023 - the naming window and the flood year. Four predate 2023 (M01 2014, M04 2012, M02 2019, M17 2019), and one of those (M04) decayed out on 2021-03-31, twenty months before the first commit. For fifteen of the search's seventeen years, a perfect Boardy map of the graph would have been a map of people who were not the answer. The binding constraint was the artifact's existence (2022-11-29), not the map's absence. No layout of the 2015 graph surfaces a person who arrives in 2024.
+
+2. Recognition is not in the schema. The two clean recognition events (M06, day one, 2024-01-03; M18, day two, 2023-12-31) are visible only after they happen. Beforehand, M06 is indistinguishable from the 2,572 one-reply accounts: no attribute in the person kind's fixed set (role, function, stage, current_focus) holds "can see it", no edge type expresses it, no blocker kind names its absence (G6). The method routes between stated asks and stated offers. Recognition was neither stated nor offer-shaped; it was an event, and the schema's event kind records what shipped - it cannot predict who will understand it.
+
+3. The perfect join still failed. M07: rank 7 by replies, featured in the launch video, pitched one-to-one, handed a claim - and answered with confusion about what the format does. SELF calls this his typical interaction, 90% of the time. The method optimizes everything upstream of that moment: the right person, the right channel, the personal approach. The failure was downstream of all of it, in the one place the method does not reach.
+
+4. The signal mismatch is total. The method stores a reasoning layer and deletes behaviour (person->person empty). The search ran on behaviour: 17,495 replies of telemetry about who responds, who stays, who amplifies. In the typed graph, that entire signal is zero edges. Meanwhile the content the join needs - stated asks and offers - exists for 5 and 4 persons respectively, out of 897 mutuals (G8). Running Boardy's method on this archive in, say, 2019 would have produced a beautiful, disciplined, nearly empty graph - and the search would still have been run, as it was, by hand and by feel, on the signal his schema throws away.
+# The missing node kind
+ANALYSIS. The schema gap, stated as a schema observation.
+
+Boardy's nine kinds describe a market of needs: persons with focuses, works with users, asks with urgency, blockers with kinds. The graph SELF needed had one more property, and it is not a detail: whether a mind, on contact with the format, can see it. Call it recognition. In this artifact it appears only as events (EV3, EV4) - after the fact - and as a conspicuous absence everywhere else: it is why A1 has no blocker (G6), why M06 cannot be distinguished in advance from 2,572 one-offs (T3), and why the core crystallized in the eight weeks after the naming instead of accumulating over fifteen years (Volume 1, scroll 4).
+
+A tenth kind is easy to sketch and hard to fill: recognition cannot be intake'd. It cannot be asked ("do you see it?" - M07 would have said yes and meant it), cannot be inferred from volume (M01 workshopped the concept's name in 2015 and faded; M04 sustained 8.5 years and left before the artifact), and cannot be stored in advance of the event that proves it. It is closer to a measurement that destroys its own uncertainty: you learn it exactly when you no longer need the map to find it.
+
+This is not a defect in Boardy's schema. His graph never needed the kind, because his population self-describes: people come to an introducer with asks. SELF's population did the opposite - it hid the property he was searching for behind exactly the noise his own filter doctrine (C3) says he put there on purpose. The map he needed and the method he was offered differ by one kind, and that kind is the search itself.
+# What the search actually was
+ANALYSIS, closing. Read off the map, the search had three acts, and only the third resembles Boardy's world.
+
+Act one (2008-2022): spanning without an artifact. 13,000 tweets, thousands of accounts touched, a concept named in conversation (2015, with M01), and no format to recognize. The yield of fifteen years, measured in eventual core members: four of the top twenty - one already gone by the time it mattered. This act is not a networking failure; it is what searching for a recognition event looks like before the recognizable thing exists.
+
+Act two (2022-11-29 to 2024): the artifact and the crystallization. The format ships in the quietest year; the naming follows eleven months later; within eight weeks the founding cluster (M18, M12, M20, M08, M06, M19) is in the graph, and within fourteen months the flood year delivers 40.6% of all the replies SELF would ever send. The population the search was for was created by the artifact's visibility, not found by the spanning.
+
+Act three (2025-2026, post-archive record): the search turns into something Boardy would recognize - stated asks (A2, A3, A4), a stated intention to introduce (CJ1), a mutual-aid program for the graph itself. It is only now, with the artifact legible and the asks explicit, that his method has material to work on. The method would have run act three faster. Acts one and two were not the method's kind of problem.
+
+The map's last word is the one in the header: this artifact was built with his method, on his discipline - empty families left empty, gaps logged, nothing fabricated. It took one evening. The search it describes took seventeen years. The difference between those two numbers is not the method's fault, and it is not the search's failure. It is the distance between mapping a graph and growing one.
